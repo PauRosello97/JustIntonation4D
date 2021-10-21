@@ -5,6 +5,9 @@ float MAX_ROTATION = 2.5;
 
 void setup(){
   size(800, 800, P3D);
+  colorMode(HSB);
+  hint(ENABLE_DEPTH_TEST);
+  hint(ENABLE_DEPTH_SORT);
   sphere = new Sphere(0, 0);
 }
 
@@ -18,12 +21,12 @@ void draw(){
   
   translate(width/2, height/2);
   sphere.draw();
-  
+    
   if(keyPressed){
     if (keyCode == 37 && rotation > MIN_ROTATION) {
-      rotation -= 0.05;
+      rotation -= 0.1;
     }else if(keyCode == 39 && rotation < MAX_ROTATION*TWO_PI){
-      rotation += 0.05;
+      rotation += 0.1;
     }
   }
 }

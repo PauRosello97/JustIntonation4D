@@ -12,11 +12,10 @@ class Tone{
   
   void draw(float rotation){
     noStroke();
-    fill(200);
+    fill(z*50, 255, 255);
     pushMatrix();
     translate(x, y, 0);
     
-    rotateZ(-rotation);
     sphere(SIZE);
     
     translate(0,0,SIZE);

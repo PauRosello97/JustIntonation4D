@@ -42,11 +42,18 @@ class Sphere{
   void draw(){
     
     pushMatrix();
-    rotateZ(rotation);
+    //rotateZ(rotation);
     stroke(0);
     noFill();
     ellipseMode(CENTER);
     ellipse(x, y, RADIUS*2, RADIUS*2);
+    
+    pushMatrix();
+    fill(0);
+    sphere(10);
+    rotateZ(rotation);
+    line(0, 0, 0, RADIUS);
+    popMatrix();
     
     float octave = rotation/TWO_PI;
     
