@@ -14,28 +14,28 @@ class Sphere{
     
     float kA = TWO_PI/22.984;
     float kO = 1/22.984;
-    float O = 22.984;
+    float Oct = 22.984;
     
-    tones.add(new Tone(RADIUS, 0,          0,    .0,              "F#1"));
-    tones.add(new Tone(RADIUS, 3.585*kA,   0,    3.585*kO,        "B1"));
-    tones.add(new Tone(RADIUS, 7.907*kA,   0,    7.907*kO,        "G1"));
-    tones.add(new Tone(RADIUS, 11.492*kA,  0,    .5,              "C2"));
-    tones.add(new Tone(RADIUS, 15.077*kA,  0,    15.077*kO,       "F2"));
-    tones.add(new Tone(RADIUS, 19.399*kA,  0,    19.399*kO,       "C#2"));
+    tones.add(new Tone(RADIUS, 0,       0,    "F#1"));
+    tones.add(new Tone(RADIUS, 3.585,   0,    "B1"));
+    tones.add(new Tone(RADIUS, 7.907,   0,    "G1"));
+    tones.add(new Tone(RADIUS, 11.492,  0,    "C2"));
+    tones.add(new Tone(RADIUS, 15.077,  0,    "F2"));
+    tones.add(new Tone(RADIUS, 19.399,  0,    "C#2"));
     
-    tones.add(new Tone(RADIUS, 0,          0,    1.,              "F#2"));
-    tones.add(new Tone(RADIUS, 3.585*kA,   0,    (O+3.585)*kO,    "B2"));
-    tones.add(new Tone(RADIUS, 7.907*kA,   0,    (O+7.907)*kO,    "G2"));
-    tones.add(new Tone(RADIUS, 11.492*kA,  0,    1.5,             "C3"));
-    tones.add(new Tone(RADIUS, 15.077*kA,  0,    (O+15.077)*kO,   "F3"));
-    tones.add(new Tone(RADIUS, 19.399*kA,  0,    (O+19.399)*kO,   "C#3"));
+    tones.add(new Tone(RADIUS, Oct,        0,   "F#2"));
+    tones.add(new Tone(RADIUS, Oct+3.585,  0,   "B2"));
+    tones.add(new Tone(RADIUS, Oct+7.907,  0,   "G2"));
+    tones.add(new Tone(RADIUS, Oct+11.492, 0,   "C3"));
+    tones.add(new Tone(RADIUS, Oct+15.077, 0,   "F3"));
+    tones.add(new Tone(RADIUS, Oct+19.399, 0,   "C#3"));
     
-    tones.add(new Tone(RADIUS, 0,          0,    2.,              "F#3"));
-    tones.add(new Tone(RADIUS, 3.585*kA,   0,    (O*2+3.585)*kO,  "B3"));
-    tones.add(new Tone(RADIUS, 7.907*kA,   0,    (O*2+7.907)*kO,  "G2"));
-    tones.add(new Tone(RADIUS, 11.492*kA,  0,    2.5,             "C4"));
-    tones.add(new Tone(RADIUS, 15.077*kA,  0,    (O*2+15.077)*kO, "F3"));
-    tones.add(new Tone(RADIUS, 19.399*kA,  0,    (O*2+19.399)*kO, "C#3"));
+    tones.add(new Tone(RADIUS, Oct*2,       0,   "F#3"));
+    tones.add(new Tone(RADIUS, Oct*2+3.585, 0,   "B3"));
+    tones.add(new Tone(RADIUS, Oct*2+7.907, 0,   "G2"));
+    tones.add(new Tone(RADIUS, Oct*2+11.492,0,   "C4"));
+    tones.add(new Tone(RADIUS, Oct*2+15.077,0,   "F3"));
+    tones.add(new Tone(RADIUS, Oct*2+19.399,0,   "C#3"));
     
   }
   
@@ -59,7 +59,7 @@ class Sphere{
       
       for(Tone tone : tones){
         if(tone.w>=octave-0.5 && tone.w < octave+0.5){
-          tone.draw();
+          tone.draw(rotationZ);
         }
       }
     
