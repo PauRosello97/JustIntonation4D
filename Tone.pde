@@ -21,6 +21,7 @@ class Tone{
     
     translate(0,0,SIZE);
     fill(0);
+    textAlign(CENTER);
     text(name, 0, 0);
     popMatrix();
   }
