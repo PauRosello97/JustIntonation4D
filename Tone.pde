@@ -9,7 +9,7 @@ class Tone{
     y = -r*cos(a)*cos(b);
     z = sin(b);
     this.w = w;
-    println(name + ": (" + x + "," + y + ", " + z + ", " + w + ")"); 
+    //println(name + ": (" + x + "," + y + ", " + z + ", " + w + ")"); 
     this.name = name;
   }
   

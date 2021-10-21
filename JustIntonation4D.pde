@@ -1,5 +1,5 @@
 Sphere sphere;
-float rotation = 0;
+float rotationZ = 0;
 float MIN_ROTATION = 0.1;
 float MAX_ROTATION = 2.5;
 
@@ -16,17 +16,17 @@ void draw(){
   
   fill(0);
   textAlign(LEFT);
-  text("Visual rotation: " + rotation, 30, 30);
-  text("Octave: "+ rotation/TWO_PI, 30, 60);
+  text("RotationZ: " + rotationZ, 30, 30);
+  text("Octave: "+ rotationZ/TWO_PI, 30, 60);
   
   translate(width/2, height/2);
-  sphere.draw();
+  sphere.draw(rotationZ);
     
   if(keyPressed){
-    if (keyCode == 37 && rotation > MIN_ROTATION) {
-      rotation -= 0.1;
-    }else if(keyCode == 39 && rotation < MAX_ROTATION*TWO_PI){
-      rotation += 0.1;
+    if (keyCode == 40 && rotationZ > MIN_ROTATION) {
+      rotationZ -= 0.1;
+    }else if(keyCode == 38 && rotationZ < MAX_ROTATION*TWO_PI){
+      rotationZ += 0.1;
     }
   }
 }
